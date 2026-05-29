@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>さがせ！画像ジェネレーター</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>🔍 さがせ！画像ジェネレーター</h1>
+  
+  <div class="control-group">
+    <label>1. 背景色を選ぶ</label>
+    <div class="color-picker">
+      <label><input type="radio" name="bg-color" value="#ffffff" checked> <span class="color-box" style="background:#ffffff; border:1px solid #ccc;"></span> ミルク</label>
+      <label><input type="radio" name="bg-color" value="#f0f0f0"> <span class="color-box" style="background:#f0f0f0; border:1px solid #ddd;"></span> グレー</label>
+      <label><input type="radio" name="bg-color" value="#fff9e6"> <span class="color-box" style="background:#fff9e6;"></span> バニラ</label>
+      
+      <label class="color-locked"><input type="radio" name="bg-color" value="#ffebf0" disabled> <span class="color-box" style="background:#ffebf0;"></span> ピーチ 🔒</label>
+      <label class="color-locked"><input type="radio" name="bg-color" value="#e6e6fa" disabled> <span class="color-box" style="background:#e6e6fa;"></span> ラベンダー 🔒</label>
+      <label class="color-locked"><input type="radio" name="bg-color" value="#e0ffff" disabled> <span class="color-box" style="background:#e0ffff;"></span> ミント 🔒</label>
+      <label class="color-locked"><input type="radio" name="bg-color" value="#f0fff0" disabled> <span class="color-box" style="background:#f0fff0;"></span> ピスタチオ 🔒</label>
+      <label class="color-locked"><input type="radio" name="bg-color" value="#fff0f5" disabled> <span class="color-box" style="background:#fff0f5;"></span> サクラ 🔒</label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label for="aspect-ratio">2. 画像サイズを選ぶ</label>
+    <select id="aspect-ratio">
+      <option value="16-9">16:9（横長）</option>
+      <option value="1-1">1:1（スクエア）</option>
+      <option value="9-16">9:16（縦長）</option>
+      <option value="A4-yoko">A4（横長・印刷用）🔒</option>
+      <option value="A4-tate">A4（縦長・印刷用）🔒</option>
+    </select>
+  </div>
+
+  <div class="control-group">
+    <label for="img-base">3. ベース画像</label>
+    <input type="file" id="img-base" accept="image/*">
+  </div>
+
+  <div class="control-group">
+    <label for="img-target">4. ターゲット画像</label>
+    <input type="file" id="img-target" accept="image/*">
+  </div>
+
+  <div class="control-group">
+    <label for="mask-shape">✨ くり抜きの形</label>
+    <select id="mask-shape">
+      <option value="none">なし（透過画像はこれ）</option>
+      <option value="circle">まる（円）</option>
+      <option value="square">スクエア（四角）</option>
+      <option value="heart">ハート</option>
+      <option value="star">星</option>
+    </select>
+    <p style="font-size:0.75rem; color:#888; margin:5px 0 0 0;">※背景透過画像は「なし」のままで綺麗に作れます！</p>
+  </div>
+
+  <div class="control-group">
+    <label>5. 難易度を選ぶ</label>
+    <div class="difficulty-picker">
+      <label><input type="radio" name="difficulty" value="normal" checked> かんたん</label>
+      <label><input type="radio" name="difficulty" value="hard"> むずかしい</label>
+      <label class="difficulty-locked"><input type="radio" name="difficulty" value="oni" disabled> 鬼 🔒</label>
+    </div>
+  </div>
+
+  <div class="control-group note-unlock-section">
+    <label for="note-password">🔑 note有料版ライセンスキー</label>
+    <div class="note-unlock-wrapper">
+      <input type="password" id="note-password" placeholder="SECRET-TSUBUO-2026 を入力">
+      <button id="btn-unlock" class="btn btn-primary btn-unlock" type="button">🔓 有料版を解放する</button>
+      <p id="license-message" class="license-message" aria-live="polite"></p>
+    </div>
+    <p class="note-link-p"><a href="あなたのnote記事URL" target="_blank">A4サイズや限定カラーをnoteで購入する 👉</a></p>
+  </div>
+
+  <div class="limit-counter-box">
+    <div>今日の残り ➔ 生成: <span id="count-generate">20</span>回 / 保存: <span id="count-download">3</span>回</div>
+    <div id="premium-badge" style="display:none; color:#ff3b30; font-weight:bold; margin-top:5px;">✨ 有料版ロック解除中 ✨</div>
+  </div>
+
+  <button id="btn-generate" class="btn btn-primary">🎨 さがせ絵を生成する</button>
+  <button id="btn-download" class="btn btn-download" disabled>📥 画像をダウンロード</button>
+
+  <div class="preview-area">
+    <p>【プレビュー】</p>
+    <canvas id="result-canvas"></canvas>
+  </div>
+</div>
+<script src="/script.js" defer></script>
+</body>
+</html>

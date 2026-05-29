@@ -1,0 +1,147 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f7f9fa;
+  color: #333;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  max-width: 500px;
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 5.2vw;
+  white-space: nowrap;
+  text-align: center;
+  color: #222;
+  margin-bottom: 25px;
+}
+@media (min-width: 500px) {
+  h1 { font-size: 1.5rem; }
+}
+.control-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #222;
+}
+input[type="file"], select, input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 0.85rem;
+  background: #fff;
+}
+.color-picker {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.color-picker label, .difficulty-picker label {
+  display: flex;
+  align-items: center;
+  background: #edf0f2;
+  color: #111;
+  padding: 10px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  box-sizing: border-box;
+}
+.color-box {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.color-locked, .difficulty-locked {
+  opacity: 0.4;
+  background: #cbd5e1 !important;
+  color: #64748b !important;
+  cursor: not-allowed !important;
+}
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+.btn-primary {
+  background: #007aff;
+  color: #fff;
+}
+.btn-primary:disabled { background: #b3d7ff; cursor: not-allowed; }
+.btn-download {
+  background: #34c759;
+  color: #fff;
+}
+.btn-download:disabled { background: #bae6c5; cursor: not-allowed; }
+.preview-area {
+  margin-top: 25px;
+  text-align: center;
+}
+.preview-area p { font-size: 0.85rem; color: #666; }
+canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #f0f0f0;
+}
+.note-unlock-section {
+  background: #fff5f5;
+  border: 1px dashed #ffb3b3;
+  padding: 15px;
+  border-radius: 10px;
+}
+.note-link-p { margin: 8px 0 0 0; font-size: 0.75rem; text-align: center; }
+.note-link-p a { color: #ff3b30; text-decoration: none; font-weight: bold; }
+.limit-counter-box {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #495057;
+  box-sizing: border-box;
+}
+.note-unlock-wrapper .btn-unlock {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+.license-message {
+  min-height: 1.2em;
+  margin: 6px 0 0 0;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #555;
+}
+.license-message.success { color: #0a7f28; font-weight: bold; }
+.license-message.error { color: #c62828; font-weight: bold; }
