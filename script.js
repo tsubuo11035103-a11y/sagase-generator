@@ -248,7 +248,7 @@ function generatePuzzle() {
     ctx.font = `bold ${fontSize}px sans-serif`;
     ctx.textAlign = 'center';
     ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'; 
-    const watermarkText = "🔍 さがせ！画像ジェネレーター ｜ Threads @tsubuo.go.go";
+    const watermarkText = "さがせ！画像ジェネレーター @tsubuo";
     ctx.fillText(watermarkText, width / 2, height - (height * 0.04));
     ctx.restore();
   }
