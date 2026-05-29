@@ -133,9 +133,9 @@ function drawMaskedImage(image, x, y, size, shape) {
     else if (shape === 'square') { ctx.rect(-size / 2, -size / 2, size, size); }
     else if (shape === 'heart') {
       const d = size;
-      ctx.moveTo(0, -d / 4);
-      ctx.bezierCurveTo(-d / 2, -d * 0.7, -d * 0.6, d / 6, 0, d / 2);
-      ctx.bezierCurveTo(d * 0.6, d / 6, d / 2, -d * 0.7, 0, -d / 4);
+      ctx.moveTo(0, -d * 0.05);
+      ctx.bezierCurveTo(-d * 0.8, -d * 0.5, -d, d * 0.15, 0, d * 0.45);
+      ctx.bezierCurveTo(d, d * 0.15, d * 0.8, -d * 0.5, 0, -d * 0.05);
     } else if (shape === 'star') {
       const spikes = 5; const outerRadius = size / 2; const innerRadius = size / 4;
       let rot = (Math.PI / 2) * 3; let step = Math.PI / spikes;
