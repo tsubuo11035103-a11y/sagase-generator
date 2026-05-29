@@ -133,11 +133,23 @@ function drawMaskedImage(image, x, y, size, shape) {
     else if (shape === 'square') { ctx.rect(-size / 2, -size / 2, size, size); }
     else if (shape === 'heart') {
       const d = size;
-    ctx.moveTo(0, -d * 0.20);
-    ctx.bezierCurveTo(-d * 0.45, -d * 0.55, -d * 0.75, -d * 0.10, -d * 0.50, d * 0.20);
-    ctx.bezierCurveTo(-d * 0.30, d * 0.42, -d * 0.08, d * 0.48, 0, d * 0.58);
-    ctx.bezierCurveTo(d * 0.08, d * 0.48, d * 0.30, d * 0.42, d * 0.50, d * 0.20);
-    ctx.bezierCurveTo(d * 0.75, -d * 0.10, d * 0.45, -d * 0.55, 0, -d * 0.20);
+ctx.moveTo(0, -d / 4);
+ctx.bezierCurveTo(
+  -d * 0.45,
+  -d * 0.65,
+  -d * 0.75,
+  d * 0.05,
+  0,
+  d * 0.52
+);
+ctx.bezierCurveTo(
+  d * 0.75,
+  d * 0.05,
+  d * 0.45,
+  -d * 0.65,
+  0,
+  -d / 4
+);
     } else if (shape === 'star') {
       const spikes = 5; const outerRadius = size / 2; const innerRadius = size / 4;
       let rot = (Math.PI / 2) * 3; let step = Math.PI / spikes;
