@@ -133,22 +133,18 @@ function drawMaskedImage(image, x, y, size, shape) {
     else if (shape === 'square') { ctx.rect(-size / 2, -size / 2, size, size); }
     else if (shape === 'heart') {
       const d = size;
-ctx.moveTo(0, -d / 4);
+ctx.moveTo(0, -d * 0.22);
+
 ctx.bezierCurveTo(
-  -d * 0.45,
-  -d * 0.65,
-  -d * 0.75,
-  d * 0.05,
-  0,
-  d * 0.45
+  -d * 0.50, -d * 0.62,
+  -d * 0.72, -d * 0.03,
+  0, d * 0.46
 );
+
 ctx.bezierCurveTo(
-  d * 0.75,
-  d * 0.05,
-  d * 0.45,
-  -d * 0.65,
-  0,
-  -d / 4
+  d * 0.72, -d * 0.03,
+  d * 0.50, -d * 0.62,
+  0, -d * 0.22
 );
     } else if (shape === 'star') {
       const spikes = 5; const outerRadius = size / 2; const innerRadius = size / 4;
