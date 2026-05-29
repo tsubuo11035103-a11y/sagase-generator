@@ -268,7 +268,7 @@ btnDownload.addEventListener('click', () => {
   const premium = isPremium();
   
   if (!premium && dlCount >= 3) {
-    alert('本日の無料ダウンロード制限（3回）に達しました。note記事にある合言葉を手に入れると、制限なしで何枚でも保存できるようになります！');
+    alert('本日の無料ダウンロード制限（3回）に達しました。\n\nnote記事にある合言葉を手に入れると、\n制限なしで何枚でも保存できるようになります！');
     return;
   }
 
