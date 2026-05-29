@@ -140,7 +140,7 @@ ctx.bezierCurveTo(
   -d * 0.75,
   d * 0.05,
   0,
-  d * 0.52
+  d * 0.45
 );
 ctx.bezierCurveTo(
   d * 0.75,
