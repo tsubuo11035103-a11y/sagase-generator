@@ -46,7 +46,7 @@ function setLicenseMessage(message, type = '') {
 async function verifyLicense() {
   const licenseKey = notePasswordInput.value.trim();
   if (!licenseKey) {
-    setLicenseMessage('ライセンスキーを入力してください。', 'error');
+    setLicenseMessage('note記事にある合言葉を入力してください。', 'error');
     return;
   }
 
@@ -64,7 +64,7 @@ async function verifyLicense() {
     if (!res.ok || !data.valid) {
       premiumUnlocked = false;
       localStorage.removeItem('sagase_premium_unlocked');
-      setLicenseMessage('ライセンスキーが正しくありません。', 'error');
+      setLicenseMessage('合言葉が違うようです。note記事の内容をもう一度ご確認ください。', 'error');
       updateUIState();
       return;
     }
@@ -161,7 +161,7 @@ function generatePuzzle() {
   const premium = isPremium();
 
   if (!premium && genCount >= 20) {
-    alert('本日の無料生成制限（20回）に達しました。noteでライセンスキーを手に入れると、制限なしで作り放題になります！');
+    alert('本日の無料生成制限（20回）に達しました。\n\nnote記事の合言葉を入力すると\n👹鬼モード・🎨限定カラー・📄A4サイズが使い放題になります✨');
     return;
   }
 
@@ -173,7 +173,7 @@ function generatePuzzle() {
   const ratioType = document.getElementById('aspect-ratio').value;
   
   if ((ratioType === 'A4-yoko' || ratioType === 'A4-tate') && !premium) {
-    alert('A4印刷サイズは有料版限定機能です。noteのライセンスキーを入力して解放してください！');
+    alert('📄 A4印刷サイズは有料版限定です！\n\nnote記事の合言葉を入力すると\n👹鬼モード・🎨限定カラー・📄A4サイズが使えるようになります✨');
     return;
   }
 
@@ -268,7 +268,7 @@ btnDownload.addEventListener('click', () => {
   const premium = isPremium();
   
   if (!premium && dlCount >= 3) {
-    alert('本日の無料ダウンロード制限（3回）に達しました。noteでライセンスキーを手に入れると、制限なしで何枚でも保存できるようになります！');
+    alert('本日の無料ダウンロード制限（3回）に達しました。note記事にある合言葉を手に入れると、制限なしで何枚でも保存できるようになります！');
     return;
   }
 
