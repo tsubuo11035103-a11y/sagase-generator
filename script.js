@@ -17,6 +17,22 @@ const btnUnlock = document.getElementById('btn-unlock');
 const licenseMessage = document.getElementById('license-message');
 let premiumUnlocked = localStorage.getItem('sagase_premium_unlocked') === 'true';
 
+function getTodayString() {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+}
+
+let today = getTodayString();
+
+if (localStorage.getItem('sagase_date') !== today) {
+  localStorage.setItem('sagase_date', today);
+  localStorage.setItem('sagase_gen_count', '0');
+  localStorage.setItem('sagase_dl_count', '0');
+}
+
+let genCount = parseInt(localStorage.getItem('sagase_gen_count') || '0');
+let dlCount = parseInt(localStorage.getItem('sagase_dl_count') || '0');
+
 function isPremium() {
   return premiumUnlocked;
 }
