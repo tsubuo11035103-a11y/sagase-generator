@@ -136,18 +136,30 @@ function drawMaskedImage(image, x, y, size, shape) {
 //      ctx.moveTo(0, -d * 0.05);
 //      ctx.bezierCurveTo(-d * 0.8, -d * 0.5, -d, d * 0.15, 0, d * 0.45);
 //      ctx.bezierCurveTo(d, d * 0.15, d * 0.8, -d * 0.5, 0, -d * 0.05);
-ctx.moveTo(0, -d * 0.22);
+ctx.moveTo(0, -d * 0.20);
 
 ctx.bezierCurveTo(
-  -d * 0.48, -d * 0.58,
-  -d * 0.68, d * 0.03,
-  0, d * 0.48
+  -d * 0.45, -d * 0.55,
+  -d * 0.75, -d * 0.10,
+  -d * 0.50, d * 0.20
 );
 
 ctx.bezierCurveTo(
-  d * 0.68, d * 0.03,
-  d * 0.48, -d * 0.58,
-  0, -d * 0.22
+  -d * 0.30, d * 0.42,
+  -d * 0.08, d * 0.48,
+  0, d * 0.58
+);
+
+ctx.bezierCurveTo(
+  d * 0.08, d * 0.48,
+  d * 0.30, d * 0.42,
+  d * 0.50, d * 0.20
+);
+
+ctx.bezierCurveTo(
+  d * 0.75, -d * 0.10,
+  d * 0.45, -d * 0.55,
+  0, -d * 0.20
 );
     } else if (shape === 'star') {
       const spikes = 5; const outerRadius = size / 2; const innerRadius = size / 4;
