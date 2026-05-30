@@ -155,3 +155,10 @@ canvas {
   padding-bottom: 20px;
   font-weight: 500;
 }
+.download-note {
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+  margin: -4px 0 18px;
+  line-height: 1.5;
+}
